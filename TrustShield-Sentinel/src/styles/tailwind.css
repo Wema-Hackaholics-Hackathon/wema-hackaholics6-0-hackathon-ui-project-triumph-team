@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Background Colors */
+    --color-background: #0f0f0f; /* gray-950 - True dark background */
+    --color-foreground: #ffffff; /* white - Pure white for critical information */
+    --color-card: #242424; /* gray-800 - Card and widget background */
+    --color-card-foreground: #ffffff; /* white - Card text color */
+    --color-popover: #2d2d2d; /* gray-700 - Elevated surface color */
+    --color-popover-foreground: #ffffff; /* white - Popover text color */
+    --color-muted: #1a1a1a; /* gray-900 - Deep charcoal base */
+    --color-muted-foreground: #a0a0a0; /* gray-400 - Medium gray for supporting info */
+    
+    /* Interactive Colors */
+    --color-primary: #00d4ff; /* cyan-400 - Bright cyan for interactive elements */
+    --color-primary-foreground: #0f0f0f; /* gray-950 - Dark text on cyan background */
+    --color-secondary: #2d2d2d; /* gray-700 - Elevated surface color */
+    --color-secondary-foreground: #ffffff; /* white - Secondary text color */
+    --color-accent: #00d4ff; /* cyan-400 - Bright cyan accent */
+    --color-accent-foreground: #0f0f0f; /* gray-950 - Dark text on accent */
+    
+    /* Status Colors */
+    --color-success: #00ff88; /* green-400 - Vibrant green for secure states */
+    --color-success-foreground: #0f0f0f; /* gray-950 - Dark text on success */
+    --color-warning: #ffaa00; /* amber-400 - Amber orange for medium-priority alerts */
+    --color-warning-foreground: #0f0f0f; /* gray-950 - Dark text on warning */
+    --color-error: #ff3366; /* red-400 - High-contrast red for critical threats */
+    --color-error-foreground: #ffffff; /* white - White text on error */
+    --color-destructive: #ff3366; /* red-400 - High-contrast red for destructive actions */
+    --color-destructive-foreground: #ffffff; /* white - White text on destructive */
+    
+    /* Form Elements */
+    --color-border: rgba(255, 255, 255, 0.1); /* white with 10% opacity - Strategic borders */
+    --color-input: #242424; /* gray-800 - Input background */
+    --color-ring: #00d4ff; /* cyan-400 - Focus ring color */
+    
+    /* Border Radius */
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-muted);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-muted-foreground);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+}
+
+@layer components {
+  /* Security-specific utility classes */
+  .threat-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .security-transition {
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .threat-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .security-border {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
