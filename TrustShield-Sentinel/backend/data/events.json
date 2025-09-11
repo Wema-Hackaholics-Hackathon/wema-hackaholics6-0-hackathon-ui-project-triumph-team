@@ -1,0 +1,42 @@
+[
+  {
+    "id": "evt-1",
+    "employeeId": "emp-001",
+    "timestamp": "2025-09-09T02:04:00.000Z",
+    "action": "login",
+    "ip": "45.77.12.9",
+    "deviceId": "PHONE-UNKNOWN",
+    "details": {}
+  },
+  {
+    "id": "evt-2",
+    "employeeId": "emp-001",
+    "timestamp": "2025-09-09T02:10:00.000Z",
+    "action": "download",
+    "ip": "45.77.12.9",
+    "deviceId": "PHONE-UNKNOWN",
+    "details": {
+      "count": 200
+    }
+  },
+  {
+    "id": "evt-3",
+    "employeeId": "emp-002",
+    "timestamp": "2025-09-09T10:00:00.000Z",
+    "action": "login",
+    "ip": "10.0.0.7",
+    "deviceId": "HR-LAP-02",
+    "details": {}
+  },
+  {
+    "id": "evt-4",
+    "employeeId": "emp-003",
+    "timestamp": "2025-09-09T21:30:00.000Z",
+    "action": "approve_transaction",
+    "ip": "10.0.0.8",
+    "deviceId": "AUD-LAP-01",
+    "details": {
+      "amount": 5000000
+    }
+  }
+]

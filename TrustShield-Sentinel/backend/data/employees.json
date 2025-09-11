@@ -1,0 +1,54 @@
+[
+  {
+    "id": "emp-001",
+    "name": "Jane Teller",
+    "role": "teller",
+    "baseline": {
+      "loginStart": 8,
+      "loginEnd": 18,
+      "avgDownloads": 10,
+      "maxApproval": 1000000,
+      "knownIps": [
+        "10.0.0.5",
+        "10.0.0.6"
+      ],
+      "knownDevices": [
+        "LAPTOP-JANE-01"
+      ]
+    }
+  },
+  {
+    "id": "emp-002",
+    "name": "David HR",
+    "role": "hr",
+    "baseline": {
+      "loginStart": 8,
+      "loginEnd": 17,
+      "avgDownloads": 25,
+      "maxApproval": 500000,
+      "knownIps": [
+        "10.0.0.7"
+      ],
+      "knownDevices": [
+        "HR-LAP-02"
+      ]
+    }
+  },
+  {
+    "id": "emp-003",
+    "name": "Adewale Auditor",
+    "role": "auditor",
+    "baseline": {
+      "loginStart": 7,
+      "loginEnd": 17,
+      "avgDownloads": 5,
+      "maxApproval": 2000000,
+      "knownIps": [
+        "10.0.0.8"
+      ],
+      "knownDevices": [
+        "AUD-LAP-01"
+      ]
+    }
+  }
+]
