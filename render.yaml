@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: trustshield-backend
+    env: node
+    region: oregon
+    branch: main
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    root: "TrustShield-Sentinel/backend"
+    plan: starter
+    envVars:
+      - key: ADMIN_SECRET
+        value: "wema-demo-secret"
+
+  - type: static
+    name: trustshield-frontend
+    region: oregon
+    branch: main
+    buildCommand: "npm install && npm run build"
+    publishPath: "TrustShield-Sentinel/frontend/dist"
+    root: "TrustShield-Sentinel"
+    envVars:
+      - key: VITE_API_BASE
+        value: "https://trustshield-backend.onrender.com/api" # update after backend deploy
