@@ -12,7 +12,7 @@
 
 *   **Live Application:**  https://trustshieldsentinel.netlify.app/
 *   **Backend API:**  https://trustshield-backend.onrender.com
-*   **Recorded Demo:** [Link to your recorded demo explaining how your solution works using Loom]  
+*   **Recorded Demo:** https://www.loom.com/share/63f2734a09564f738216510c554626f1
 
 ---
 
