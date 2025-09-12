@@ -53,7 +53,7 @@ Insider threats are dangerous because staff already have legitimate access. Curr
 
 1. Clone the repository:
     ```bash
-    git clone [your-repo-link]
+    git clone TrustShield-Sentinel
     ```
 
 2. Navigate to the project directory:
