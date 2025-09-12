@@ -44,7 +44,8 @@ const AlertNotificationOverlay = ({
       ?.map((alert) =>
         setTimeout(() => {
           handleDismiss(alert.id);
-        }, autoHideDelay)
+        }, 
+        autoHideDelay)
       );
 
     return () => {
@@ -190,6 +191,13 @@ const AlertNotificationOverlay = ({
                   >
                     {formatTimestamp(alert.timestamp)}
                   </span>
+                  <button
+                    onClick={() => handleDismiss(alert.id)}
+                    className={`p-1 rounded-md hover:bg-black/20 security-transition ${config.textColor}`}
+                    aria-label="Dismiss alert"
+                  >
+                    <Icon name="X" size={14} />
+                  </button>
                 </div>
 
                 {/* Employee Identity */}
@@ -262,14 +270,6 @@ const AlertNotificationOverlay = ({
                       Reveal Identity
                     </Button>
                   </div>
-
-                  <button
-                    onClick={() => handleDismiss(alert.id)}
-                    className={`p-1 rounded-md hover:bg-black/20 security-transition ${config.textColor}`}
-                    aria-label="Dismiss alert"
-                  >
-                    <Icon name="X" size={14} />
-                  </button>
                 </div>
               </div>
             </div>

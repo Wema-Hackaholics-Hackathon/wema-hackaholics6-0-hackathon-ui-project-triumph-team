@@ -193,14 +193,14 @@ const UserInvestigationList = ({
                           >
                             Activity Timeline
                           </Button>
-                          <Button
+                          {/* <Button
                             variant="outline"
                             size="sm"
                             iconName="Users"
                             iconPosition="left"
                           >
                             Compare Peers
-                          </Button>
+                          </Button> */}
                         </div>
                       </div>
                     )}
