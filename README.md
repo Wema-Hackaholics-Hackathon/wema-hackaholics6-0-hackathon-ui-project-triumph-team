@@ -45,8 +45,7 @@ Insider threats are dangerous because staff already have legitimate access. Curr
 - **Frontend:** React + Tailwind CSS (Dashboard + Employee Modals)  
 - **Backend:** Node.js (Express) with mock MongoDB/JSON data  
 - **Database:** Mock data only (employee activity logs)  
-- **Deployment:** Vercel / Netlify (Frontend), Render / Railway (Backend)  
-- **Design:** Figma (UI mockups for chatbot & dashboard)  
+- **Deployment:** Vercel / Netlify (Frontend), Render / Railway (Backend) 
 
 ---
 
@@ -59,7 +58,7 @@ Insider threats are dangerous because staff already have legitimate access. Curr
 
 2. Navigate to the project directory:
     ```bash
-    cd [project-directory]
+    cd frontend
     ```
 
 3. Install dependencies:
@@ -85,7 +84,7 @@ Insider threats are dangerous because staff already have legitimate access. Curr
 
 7. Open the app in your browser:
     ```
-    http://localhost:3000
+    http://localhost:5173
     ```
 
 ---
