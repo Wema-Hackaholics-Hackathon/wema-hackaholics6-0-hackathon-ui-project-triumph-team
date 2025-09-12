@@ -10,8 +10,8 @@
 
 ## 🚀 Live Demo
 
-*   **Live Application:**  https://trustshieldsentinel.netlify.app/
-*   **Backend API:**  https://trustshield-backend.onrender.com
+*   **Live Application:**  https://the-enemy-within-wemabank-1.onrender.com/
+*   **Backend API:**  https://the-enemy-within-wemabank.onrender.com/api/dashboard
 *   **Recorded Demo:** https://www.loom.com/share/63f2734a09564f738216510c554626f1
 
 ---
