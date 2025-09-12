@@ -5,7 +5,6 @@
 - Fadare David
 - Adewale Oreoluwa
 - Taiwo Amoo
-- Gbenga
 
 ---
 
