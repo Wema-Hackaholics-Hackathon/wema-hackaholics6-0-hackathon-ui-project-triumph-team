@@ -1,3 +1,8 @@
+## Frontend: Alerts SSE & React Query
+
+- The frontend now includes a lightweight `subscribeToAlerts` helper in `src/utils/api.js` that connects to `/api/stream/alerts` via Server-Sent Events (SSE). The dashboard subscribes on mount to receive live alert updates.
+- Existing `fetchAlerts()` continues to work; SSE is a non-breaking addition.
+- Recommended: add `@tanstack/react-query` for cache/mutation management and optimistic updates in a follow-up change.
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

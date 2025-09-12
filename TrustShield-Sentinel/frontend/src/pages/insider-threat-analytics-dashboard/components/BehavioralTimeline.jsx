@@ -12,6 +12,7 @@ const BehavioralTimeline = ({
   const [selectedTimeRange, setSelectedTimeRange] = useState('24h');
   const [filteredData, setFilteredData] = useState([]);
   const [hoveredEvent, setHoveredEvent] = useState(null);
+  const [generated, setGenerated] = useState(false);
 
   useEffect(() => {
     // Filter and process timeline data based on selected time range
@@ -92,6 +93,47 @@ const BehavioralTimeline = ({
     { value: '7d', label: '7 Days' }
   ];
 
+  const generateDemoEvents = (range) => {
+    const now = Date.now();
+    const events = [];
+    if (range === '24h') {
+      // create a handful of events across the last 24 hours
+      for (let i = 0; i < 8; i++) {
+        events.push({
+          id: `gen-24-${i}`,
+          title: i % 3 === 0 ? 'Large File Download' : 'Database Query',
+          description: i % 3 === 0 ? 'Multiple large files downloaded to external device' : 'Unusual query pattern observed',
+          eventType: i % 3 === 0 ? 'file_transfer' : 'data_access',
+          severity: i % 4 === 0 ? 'critical' : 'high',
+          isAnomaly: true,
+          timestamp: new Date(now - (i * 3 + 1) * 60 * 60 * 1000).toISOString(),
+          user: i % 2 === 0 ? 'Employee-005' : 'Ayokunle Olayinka',
+          source: i % 3 === 0 ? 'File Server' : 'Database',
+          riskScore: 70 - i * 3,
+        });
+      }
+    }
+    if (range === '7d') {
+      for (let d = 0; d < 7; d++) {
+        events.push({
+          id: `gen-7d-${d}`,
+          title: d % 2 === 0 ? 'Unusual Login Location' : 'Privilege Escalation Attempt',
+          description: d % 2 === 0 ? 'User logged in from an unusual geographic region' : 'Attempted access to resources beyond permission',
+          eventType: d % 2 === 0 ? 'login' : 'privilege_change',
+          severity: d % 3 === 0 ? 'high' : 'medium',
+          isAnomaly: d % 2 === 0,
+          timestamp: new Date(now - d * 24 * 60 * 60 * 1000).toISOString(),
+          user: d % 3 === 0 ? 'Abiola Olarinde' : 'Employee-004',
+          source: 'Auth System',
+          riskScore: 50 + d,
+        });
+      }
+    }
+
+    setFilteredData(events);
+    setGenerated(true);
+  };
+
   return (
     <div className={`bg-card rounded-lg border border-border ${className}`}>
       <div className="p-6 border-b border-border">
@@ -117,6 +159,20 @@ const BehavioralTimeline = ({
                 {option?.label}
               </Button>
             ))}
+            <Button
+              variant={selectedTimeRange === '24h' ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => { setSelectedTimeRange('24h'); generateDemoEvents('24h'); }}
+            >
+              Quick: 24h
+            </Button>
+            <Button
+              variant={selectedTimeRange === '7d' ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => { setSelectedTimeRange('7d'); generateDemoEvents('7d'); }}
+            >
+              Quick: 7d
+            </Button>
           </div>
         </div>
 
@@ -140,6 +196,11 @@ const BehavioralTimeline = ({
           <div className="text-center py-12">
             <Icon name="Clock" size={48} className="text-muted-foreground mx-auto mb-4" />
             <p className="text-muted-foreground">No activity data for selected time range</p>
+            <div className="mt-4">
+              <Button variant="default" onClick={() => generateDemoEvents(selectedTimeRange)}>
+                Generate sample events for this range
+              </Button>
+            </div>
           </div>
         ) : (
           <div className="relative">

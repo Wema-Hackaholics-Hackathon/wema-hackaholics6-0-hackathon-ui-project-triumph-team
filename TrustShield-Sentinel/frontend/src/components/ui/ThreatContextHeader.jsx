@@ -98,6 +98,13 @@ const ThreatContextHeader = ({
     >
       {/* Left Section - Threat Status */}
       <div className="flex items-center space-x-4">
+        <button
+          onClick={() => window.dispatchEvent(new Event('reopenAlerts'))}
+          title="Open alerts overlay"
+          className="p-1 rounded-md hover:bg-muted security-transition"
+        >
+          <Icon name="Bell" size={16} />
+        </button>
         <div className={`flex items-center space-x-2 px-2 py-1 rounded-lg ${statusConfig?.bgColor}`}>
           <Icon 
             name={statusConfig?.icon} 

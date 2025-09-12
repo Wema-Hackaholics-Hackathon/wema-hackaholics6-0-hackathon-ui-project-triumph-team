@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
@@ -50,6 +51,18 @@ const UserInvestigationList = ({
     if (onInvestigate) {
       onInvestigate(user);
     }
+  };
+
+  const navigate = useNavigate();
+
+  const handleViewProfile = (user) => {
+    const id = user?.id;
+    navigate(`/profile/${id}`, { state: { raw: user?.raw || user } });
+  };
+
+  const handleActivityTimeline = (user) => {
+    const id = user?.id;
+    navigate(`/timeline/${id}`, { state: { raw: user?.raw || user } });
   };
 
   const formatLastActivity = (timestamp) => {
@@ -182,6 +195,7 @@ const UserInvestigationList = ({
                             size="sm"
                             iconName="Eye"
                             iconPosition="left"
+                            onClick={(e) => { e.stopPropagation(); handleViewProfile(user); }}
                           >
                             View Profile
                           </Button>
@@ -190,6 +204,7 @@ const UserInvestigationList = ({
                             size="sm"
                             iconName="Clock"
                             iconPosition="left"
+                            onClick={(e) => { e.stopPropagation(); handleActivityTimeline(user); }}
                           >
                             Activity Timeline
                           </Button>

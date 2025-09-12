@@ -51,4 +51,105 @@
       ]
     }
   }
+  ,
+  {
+    "id": "emp-012",
+    "name": "Dev CopyUser",
+    "role": "engineering",
+    "baseline": {
+      "loginStart": 8,
+      "loginEnd": 18,
+      "avgDownloads": 5,
+      "maxApproval": 100000,
+      "knownIps": ["10.4.4.4"],
+      "knownDevices": ["ENG-WS-03"],
+      "avgWrites": 50,
+      "country": "ng"
+    }
+  },
+  {
+    "id": "emp-013",
+    "name": "SRE TokenUser",
+    "role": "sre",
+    "baseline": {
+      "loginStart": 7,
+      "loginEnd": 19,
+      "avgDownloads": 10,
+      "maxApproval": 200000,
+      "knownIps": ["198.51.100.12"],
+      "knownDevices": ["SRE-01"],
+      "country": "ng"
+    }
+  },
+  {
+    "id": "emp-014",
+    "name": "Mobile VPNUser",
+    "role": "ops",
+    "baseline": {
+      "loginStart": 6,
+      "loginEnd": 22,
+      "avgDownloads": 2,
+      "maxApproval": 50000,
+      "knownIps": ["203.0.113.1"],
+      "knownDevices": ["MOB-22"],
+      "country": "ng"
+    }
+  },
+  {
+    "id": "emp-015",
+    "name": "Ops Packager",
+    "role": "ops",
+    "baseline": {
+      "loginStart": 7,
+      "loginEnd": 19,
+      "avgDownloads": 3,
+      "maxApproval": 100000,
+      "knownIps": ["10.5.5.5"],
+      "knownDevices": ["OPS-09"],
+      "country": "ng"
+    }
+  },
+  {
+    "id": "emp-016",
+    "name": "Security Tech",
+    "role": "security",
+    "baseline": {
+      "loginStart": 0,
+      "loginEnd": 23,
+      "avgDownloads": 1,
+      "maxApproval": 1000000,
+      "knownIps": ["10.6.6.6"],
+      "knownDevices": ["SEC-01"],
+      "country": "ng"
+    }
+  },
+  {
+    "id": "emp-017",
+    "name": "Developer Writer",
+    "role": "engineering",
+    "baseline": {
+      "loginStart": 8,
+      "loginEnd": 18,
+      "avgDownloads": 20,
+      "maxApproval": 50000,
+      "knownIps": ["10.7.7.7"],
+      "knownDevices": ["DEV-01"],
+      "avgWrites": 100,
+      "country": "ng"
+    }
+  },
+  {
+    "id": "emp-018",
+    "name": "Marketing Assistant",
+    "role": "marketing",
+    "baseline": {
+      "loginStart": 8,
+      "loginEnd": 18,
+      "avgDownloads": 2,
+      "maxApproval": 10000,
+      "knownIps": ["10.8.8.8"],
+      "knownDevices": ["MK-02"],
+      "country": "ng"
+    }
+  }
 ]

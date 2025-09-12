@@ -18,6 +18,7 @@ const EVT_PATH = path.join(DATA_DIR, "events.json");
 let employees = JSON.parse(fs.readFileSync(EMP_PATH));
 let events = JSON.parse(fs.readFileSync(EVT_PATH));
 let alerts = [];
+const sseClients = new Set();
 
 const app = express();
 app.use(cors());
@@ -55,6 +56,15 @@ function buildAlerts() {
       alerts.push(alert);
     }
   });
+  // notify SSE clients
+  const payload = JSON.stringify({ alerts });
+  sseClients.forEach((res) => {
+    try {
+      res.write(`data: ${payload}\n\n`);
+    } catch (err) {
+      // ignore write errors
+    }
+  });
 }
 buildAlerts();
 
@@ -66,9 +76,25 @@ app.get("/api/employees", (req, res) => {
   res.json({ employees: anonymized });
 });
 
+// get full employee by id
+app.get('/api/employees/:id', (req, res) => {
+  const id = req.params.id;
+  const emp = employees.find((e) => e.id === id || shortHash(e.id) === id);
+  if (!emp) return res.status(404).json({ error: 'employee not found' });
+  res.json({ employee: emp });
+});
+
 // get alerts
 app.get("/api/alerts", (req, res) => {
   res.json({ alerts });
+});
+
+// get single alert by id
+app.get('/api/alerts/:id', (req, res) => {
+  const id = req.params.id;
+  const alert = alerts.find((a) => a.alertId === id || a.alertId === id);
+  if (!alert) return res.status(404).json({ error: 'alert not found' });
+  res.json({ alert });
 });
 
 app.post("/api/alerts/:id/respond", (req, res) => {
@@ -139,12 +165,30 @@ app.post("/api/events", (req, res) => {
   // recompute alerts
   buildAlerts();
   res.json({ ok: true, evt });
-});git
+});
 
 // static mock data endpoints for debugging
 app.get("/api/events", (req, res) => res.json({ events }));
 
+// SSE stream for alerts
+app.get('/api/stream/alerts', (req, res) => {
+  res.set({
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    Connection: 'keep-alive',
+  });
+  res.flushHeaders && res.flushHeaders();
+
+  // send current alerts once
+  res.write(`data: ${JSON.stringify({ alerts })}\n\n`);
+
+  sseClients.add(res);
+
+  req.on('close', () => {
+    sseClients.delete(res);
+  });
+});
+
+const logger = require('./logger');
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () =>
-  console.log(`TrustShield API running on http://localhost:${PORT}`)
-);
+app.listen(PORT, () => logger.info(`TrustShield API running on http://localhost:${PORT}`));
