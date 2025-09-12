@@ -2,16 +2,16 @@
 
 ## Team Members
 - Taiwo King Praise
-- Fadare David
 - Adewale Oreoluwa
+- Fadare David
 - Taiwo Amoo
 
 ---
 
 ## 🚀 Live Demo
 
-*   **Live Application:** [Link to your deployed Vercel/Netlify/Render URL]  
-*   **Backend API:** [Link to your live backend API endpoint URL, if separate]  
+*   **Live Application:**  https://trustshieldsentinel.netlify.app/
+*   **Backend API:**  https://trustshield-backend.onrender.com
 *   **Recorded Demo:** [Link to your recorded demo explaining how your solution works using Loom]  
 
 ---
